@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <!-- Bootstrap CSS for toast and form validation -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .create-account-box {
+            width: 300px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .create-account-box h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .create-account-box input[type="text"],
+        .create-account-box input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .create-account-box input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .create-account-box input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .invalid-feedback {
+            color: red;
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+    <!-- Bootstrap JS for toast and form validation -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function createAccount() {
+            var username = document.getElementById("username").value.trim();
+            var firstname = document.getElementById("firstname").value.trim();
+            var lastname = document.getElementById("lastname").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+            // Reset validation classes and messages
+            resetValidation();
+
+            var isValid = true;
+
+            // Validate username
+            if (username === "") {
+                isValid = false;
+                showValidationMessage("username", "กรุณากรอกชื่อผู้ใช้");
+            } else if (username.length > 20) {
+                isValid = false;
+                showValidationMessage("username", "ชื่อผู้ใช้ไม่ควรเกิน 20 ตัวอักษร");
+            }
+
+            // Validate firstname
+            if (firstname === "") {
+                isValid = false;
+                showValidationMessage("firstname", "กรุณากรอกชื่อ");
+            }
+
+            // Validate lastname
+            if (lastname === "") {
+                isValid = false;
+                showValidationMessage("lastname", "กรุณากรอกนามสกุล");
+            }
+
+            // Validate password
+            if (password === "") {
+                isValid = false;
+                showValidationMessage("password", "กรุณากรอกรหัสผ่าน");
+            } else if (password.length < 8) {
+                isValid = false;
+                showValidationMessage("password", "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร");
+            }
+
+            // Validate confirm password
+            if (confirmPassword === "") {
+                isValid = false;
+                showValidationMessage("confirmPassword", "กรุณายืนยันรหัสผ่าน");
+            } else if (password !== confirmPassword) {
+                isValid = false;
+                showValidationMessage("confirmPassword", "รหัสผ่านไม่ตรงกัน");
+            }
+
+            // If all fields are valid, show success toast and reset form
+            if (isValid) {
+                showToast("สร้างบัญชีสำเร็จ", 'success');
+                document.getElementById("create-account-form").reset();
+            } else {
+                showToast("ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง", 'warning');
+            }
+        }
+
+        function showValidationMessage(fieldId, message) {
+            var field = document.getElementById(fieldId);
+            field.classList.add('is-invalid');
+            var feedback = field.nextElementSibling;
+            feedback.innerText = message;
+        }
+
+        function resetValidation() {
+            var fields = document.querySelectorAll('.is-invalid');
+            fields.forEach(function(field) {
+                field.classList.remove('is-invalid');
+                field.nextElementSibling.innerText = '';
+            });
+        }
+
+        function showToast(message, type = 'info') {
+            var toastElement = document.getElementById('toast');
+            var toastBody = toastElement.querySelector('.toast-body');
+            toastBody.innerText = message;
+            toastElement.classList.remove('alert-info', 'alert-warning', 'alert-success');
+            toastElement.classList.add('alert-' + type);
+            var bootstrapToast = new bootstrap.Toast(toastElement);
+            bootstrapToast.show();
+        }
+    </script>
+</head>
+<body>
+    <!-- Toast -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+        <div class="toast-body">
+            <!-- Toast message will be displayed here -->
+        </div>
+    </div>
+
+    <div class="create-account-box">
+        <h2>Create Account</h2>
+        <form id="create-account-form">
+            <div class="form-group">
+                <input type="text" id="username" class="form-control" placeholder="Username"  required>
+                <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="firstname" class="form-control" placeholder="First Name" required>
+                <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="lastname" class="form-control" placeholder="Last Name" required>
+                <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" class="form-control" placeholder="Password" required>
+                <div class="invalid-feedback"></div>
+            </div>
+            <div class="form-group">
+                <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                <div class="invalid-feedback"></div>
+            </div>
+            <input type="button" class="btn btn-primary" value="Create Account" onclick="createAccount()">
+        </form>
+    </div>
+</body>
+</html>
