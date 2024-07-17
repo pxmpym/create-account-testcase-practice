@@ -14,7 +14,7 @@ This repository is my practice project where I have designed a sample "Create Ac
 1. When the "Create Account" button is clicked after all fields are filled correctly, a toast message "สร้างบัญชีสำเร็จ" (Account creation successful) appears. If not all fields are filled, an error message "กรุณากรอก..." will be displayed, and the account cannot be created.
 2. Validation Rules:
 - Username:
-- Maximum 20 characters.
+    - Maximum 20 characters.
     - If more than 20 characters, the message "ชื่อผู้ใช้ไม่ควรเกิน 20 ตัวอักษร" will be displayed.
 - Password:
     - Minimum 8 characters.
