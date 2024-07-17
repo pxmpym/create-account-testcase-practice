@@ -1,0 +1,1152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20240717 22:17:12.127" rpa="false" schemaversion="3">
+<suite id="s1" name="Create-Account" source="D:\MyPractice\simple-testcase\automated\tests\create-account.robot">
+<test id="s1-t1" name="CREATE_ACCOUNT_01: User create account with valid data should success" line="28">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:12.595" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:12.594" endtime="20240717 22:17:14.155"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>tangmo1</arg>
+<arg>water</arg>
+<arg>melon</arg>
+<arg>12345678</arg>
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:14.165" level="INFO">Typing text 'tangmo1' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:14.164" endtime="20240717 22:17:14.364"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:14.366" level="INFO">Typing text 'water' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:14.365" endtime="20240717 22:17:14.497"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:14.498" level="INFO">Typing text 'melon' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:14.497" endtime="20240717 22:17:14.626"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:14.626" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:14.678" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:14.768" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:14.626" endtime="20240717 22:17:14.769"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:14.770" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:14.841" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:14.924" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:14.769" endtime="20240717 22:17:14.924"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:17:14.926" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:17:15.261" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:17:14.925" endtime="20240717 22:17:15.298"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:14.162" endtime="20240717 22:17:15.299"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${SUCCESS TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:15.356" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'สร้างบัญชีสำเร็จ')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:15.300" endtime="20240717 22:17:15.356"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:17:15.357" endtime="20240717 22:17:17.565"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:12.592" endtime="20240717 22:17:17.567"/>
+</test>
+<test id="s1-t2" name="CREATE_ACCOUNT_02: &quot;User create account with blank username should failed" line="32">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:17.571" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:17.570" endtime="20240717 22:17:19.024"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>${EMPTY}</arg>
+<arg>somoh</arg>
+<arg>sour</arg>
+<arg>12345678</arg>
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:19.028" level="INFO">Typing text '' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:19.027" endtime="20240717 22:17:19.186"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:19.187" level="INFO">Typing text 'somoh' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:19.186" endtime="20240717 22:17:19.323"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:19.324" level="INFO">Typing text 'sour' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:19.323" endtime="20240717 22:17:19.457"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:19.459" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:19.524" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:19.623" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:19.457" endtime="20240717 22:17:19.624"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:19.624" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:19.690" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:19.794" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:19.624" endtime="20240717 22:17:19.795"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:17:19.796" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:17:20.151" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:17:19.795" endtime="20240717 22:17:20.221"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:19.025" endtime="20240717 22:17:20.221"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY USERNAME MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:20.305" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[1]/div[contains(text(), 'กรุณากรอกชื่อผู้ใช้')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:20.222" endtime="20240717 22:17:20.305"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${FAILED TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:20.359" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:20.313" endtime="20240717 22:17:20.359"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:17:20.360" endtime="20240717 22:17:22.640"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:17.569" endtime="20240717 22:17:22.641"/>
+</test>
+<test id="s1-t3" name="CREATE_ACCOUNT_03: User create account with blank first name should failed" line="37">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:22.647" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:22.646" endtime="20240717 22:17:24.175"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>lumyai1</arg>
+<arg>${EMPTY}</arg>
+<arg>sweet</arg>
+<arg>12345678</arg>
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:24.180" level="INFO">Typing text 'lumyai1' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:24.179" endtime="20240717 22:17:24.363"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:24.364" level="INFO">Typing text '' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:24.363" endtime="20240717 22:17:24.482"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:24.483" level="INFO">Typing text 'sweet' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:24.482" endtime="20240717 22:17:24.628"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:24.629" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:24.697" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:24.794" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:24.628" endtime="20240717 22:17:24.794"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:24.795" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:24.854" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:24.930" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:24.794" endtime="20240717 22:17:24.930"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:17:24.931" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:17:25.293" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:17:24.930" endtime="20240717 22:17:25.330"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:24.176" endtime="20240717 22:17:25.331"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY FIRSTNAME MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:25.393" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[2]/div[contains(text(), 'กรุณากรอกชื่อ')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:25.333" endtime="20240717 22:17:25.393"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${FAILED TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:25.439" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:25.394" endtime="20240717 22:17:25.439"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:17:25.440" endtime="20240717 22:17:27.726"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:22.645" endtime="20240717 22:17:27.727"/>
+</test>
+<test id="s1-t4" name="CREATE_ACCOUNT_04: User create account with blank last name should failed" line="42">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:27.732" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:27.731" endtime="20240717 22:17:29.161"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>chomphu1</arg>
+<arg>chomphu</arg>
+<arg>${EMPTY}</arg>
+<arg>12345678</arg>
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:29.165" level="INFO">Typing text 'chomphu1' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:29.164" endtime="20240717 22:17:29.349"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:29.350" level="INFO">Typing text 'chomphu' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:29.349" endtime="20240717 22:17:29.487"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:29.488" level="INFO">Typing text '' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:29.487" endtime="20240717 22:17:29.619"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:29.620" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:29.693" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:29.798" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:29.619" endtime="20240717 22:17:29.798"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:29.799" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:29.872" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:29.983" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:29.798" endtime="20240717 22:17:29.983"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:17:29.984" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:17:30.330" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:17:29.983" endtime="20240717 22:17:30.367"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:29.162" endtime="20240717 22:17:30.368"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY LASTNAME MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:30.421" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[3]/div[contains(text(), 'กรุณากรอกนามสกุล')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:30.369" endtime="20240717 22:17:30.421"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${FAILED TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:30.459" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:30.422" endtime="20240717 22:17:30.459"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:17:30.460" endtime="20240717 22:17:32.687"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:27.730" endtime="20240717 22:17:32.688"/>
+</test>
+<test id="s1-t5" name="CREATE_ACCOUNT_05: User create account with blank password should failed" line="47">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:32.693" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:32.692" endtime="20240717 22:17:34.228"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>melon1</arg>
+<arg>melon</arg>
+<arg>lonme</arg>
+<arg>${EMPTY}</arg>
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:34.232" level="INFO">Typing text 'melon1' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:34.231" endtime="20240717 22:17:34.418"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:34.419" level="INFO">Typing text 'melon' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:34.418" endtime="20240717 22:17:34.551"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:34.552" level="INFO">Typing text 'lonme' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:34.551" endtime="20240717 22:17:34.685"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:34.686" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:34.744" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:34.819" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:34.685" endtime="20240717 22:17:34.819"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:34.820" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:34.876" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:34.957" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:34.819" endtime="20240717 22:17:34.957"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:17:34.958" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:17:35.318" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:17:34.957" endtime="20240717 22:17:35.356"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:34.229" endtime="20240717 22:17:35.356"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY PASSWORD MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:35.409" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[4]/div[contains(text(), 'กรุณากรอกรหัสผ่าน')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:35.357" endtime="20240717 22:17:35.409"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${PASSWORD MISMATCHED MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:35.465" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[5]/div[contains(text(), 'รหัสผ่านไม่ตรงกัน')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:35.410" endtime="20240717 22:17:35.465"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${FAILED TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:35.510" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:35.466" endtime="20240717 22:17:35.510"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:17:35.511" endtime="20240717 22:17:37.714"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:32.691" endtime="20240717 22:17:37.715"/>
+</test>
+<test id="s1-t6" name="CREATE_ACCOUNT_06: User create account with blank confirm password should failed" line="53">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:37.720" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:37.719" endtime="20240717 22:17:39.264"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>mango1</arg>
+<arg>mango</arg>
+<arg>gomang</arg>
+<arg>12345678</arg>
+<arg>${EMPTY}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:39.269" level="INFO">Typing text 'mango1' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:39.268" endtime="20240717 22:17:39.439"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:39.440" level="INFO">Typing text 'mango' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:39.440" endtime="20240717 22:17:39.570"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:39.571" level="INFO">Typing text 'gomang' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:39.570" endtime="20240717 22:17:39.698"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:39.699" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:39.754" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:39.840" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:39.698" endtime="20240717 22:17:39.841"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:39.841" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:39.902" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:39.975" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:39.841" endtime="20240717 22:17:39.975"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:17:39.976" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:17:40.329" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:17:39.975" endtime="20240717 22:17:40.364"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:39.265" endtime="20240717 22:17:40.365"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY CONFIRM PASSWORD MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:40.410" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[5]/div[contains(text(), 'กรุณายืนยันรหัสผ่าน')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:40.366" endtime="20240717 22:17:40.410"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${FAILED TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:40.445" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:40.411" endtime="20240717 22:17:40.445"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:17:40.446" endtime="20240717 22:17:42.679"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:37.718" endtime="20240717 22:17:42.706"/>
+</test>
+<test id="s1-t7" name="CREATE_ACCOUNT_07: User create account with all empty fields should failed" line="59">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:42.711" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:42.709" endtime="20240717 22:17:44.181"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:44.189" level="INFO">Typing text '' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:44.188" endtime="20240717 22:17:44.350"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:44.351" level="INFO">Typing text '' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:44.350" endtime="20240717 22:17:44.476"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:44.477" level="INFO">Typing text '' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:44.477" endtime="20240717 22:17:44.596"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:44.597" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:44.658" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:44.728" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:44.597" endtime="20240717 22:17:44.728"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:44.729" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:44.791" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:44.864" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:44.728" endtime="20240717 22:17:44.864"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:17:44.866" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:17:45.246" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:17:44.865" endtime="20240717 22:17:45.291"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:44.183" endtime="20240717 22:17:45.291"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY USERNAME MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:45.356" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[1]/div[contains(text(), 'กรุณากรอกชื่อผู้ใช้')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:45.312" endtime="20240717 22:17:45.356"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY FIRSTNAME MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:45.401" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[2]/div[contains(text(), 'กรุณากรอกชื่อ')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:45.358" endtime="20240717 22:17:45.401"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY LASTNAME MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:45.444" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[3]/div[contains(text(), 'กรุณากรอกนามสกุล')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:45.402" endtime="20240717 22:17:45.444"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY PASSWORD MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:45.479" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[4]/div[contains(text(), 'กรุณากรอกรหัสผ่าน')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:45.445" endtime="20240717 22:17:45.479"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${EMPTY CONFIRM PASSWORD MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:45.509" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[5]/div[contains(text(), 'กรุณายืนยันรหัสผ่าน')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:45.480" endtime="20240717 22:17:45.509"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${FAILED TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:45.540" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:45.510" endtime="20240717 22:17:45.540"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:17:45.541" endtime="20240717 22:17:47.729"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:42.708" endtime="20240717 22:17:47.730"/>
+</test>
+<test id="s1-t8" name="CREATE_ACCOUNT_08: User create account with username length 19 characters should success (&lt;20)" line="68">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:47.735" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:47.734" endtime="20240717 22:17:49.166"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>aaaaaaaaaaaaaaaaaaa</arg>
+<arg>nc</arg>
+<arg>mk</arg>
+<arg>12345678</arg>
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:49.168" level="INFO">Typing text 'aaaaaaaaaaaaaaaaaaa' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:49.167" endtime="20240717 22:17:49.380"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:49.381" level="INFO">Typing text 'nc' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:49.380" endtime="20240717 22:17:49.505"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:49.507" level="INFO">Typing text 'mk' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:49.506" endtime="20240717 22:17:49.644"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:49.645" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:49.702" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:49.790" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:49.644" endtime="20240717 22:17:49.790"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:49.791" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:49.849" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:49.941" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:49.790" endtime="20240717 22:17:49.942"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:17:49.943" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:17:50.287" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:17:49.942" endtime="20240717 22:17:50.320"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:49.167" endtime="20240717 22:17:50.320"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${SUCCESS TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:50.459" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'สร้างบัญชีสำเร็จ')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:50.321" endtime="20240717 22:17:50.459"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:17:50.460" endtime="20240717 22:17:52.612"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:47.733" endtime="20240717 22:17:52.612"/>
+</test>
+<test id="s1-t9" name="CREATE_ACCOUNT_09: User create account with username length 20 characters should success (=20)" line="72">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:52.617" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:52.616" endtime="20240717 22:17:54.322"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>bbbbbbbbbbbbbbbbbbbb</arg>
+<arg>nc</arg>
+<arg>mk</arg>
+<arg>12345678</arg>
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:54.328" level="INFO">Typing text 'bbbbbbbbbbbbbbbbbbbb' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:54.327" endtime="20240717 22:17:54.529"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:54.530" level="INFO">Typing text 'nc' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:54.529" endtime="20240717 22:17:54.648"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:54.648" level="INFO">Typing text 'mk' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:54.648" endtime="20240717 22:17:54.775"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:54.776" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:54.833" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:54.924" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:54.775" endtime="20240717 22:17:54.924"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:54.925" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:54.986" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:55.069" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:54.924" endtime="20240717 22:17:55.069"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:17:55.071" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:17:55.424" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:17:55.070" endtime="20240717 22:17:55.496"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:54.326" endtime="20240717 22:17:55.496"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${SUCCESS TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:17:55.558" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'สร้างบัญชีสำเร็จ')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:17:55.496" endtime="20240717 22:17:55.558"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:17:55.559" endtime="20240717 22:17:57.815"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:52.614" endtime="20240717 22:17:57.816"/>
+</test>
+<test id="s1-t10" name="CREATE_ACCOUNT_10: User create account with username length 21 characters should failed (&gt;20)" line="76">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:17:57.820" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:17:57.819" endtime="20240717 22:17:59.257"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>ccccccccccccccccccccc</arg>
+<arg>nc</arg>
+<arg>mk</arg>
+<arg>12345678</arg>
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:59.262" level="INFO">Typing text 'ccccccccccccccccccccc' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:59.261" endtime="20240717 22:17:59.469"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:59.470" level="INFO">Typing text 'nc' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:59.470" endtime="20240717 22:17:59.601"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:59.602" level="INFO">Typing text 'mk' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:17:59.601" endtime="20240717 22:17:59.739"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:59.740" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:17:59.797" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:17:59.889" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:59.739" endtime="20240717 22:17:59.889"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:17:59.890" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:17:59.947" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:18:00.035" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:17:59.889" endtime="20240717 22:18:00.036"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:18:00.037" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:18:00.398" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:18:00.036" endtime="20240717 22:18:00.435"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:59.260" endtime="20240717 22:18:00.435"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${USERNAME WARNING}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:18:00.490" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[1]/div[contains(text(), 'ชื่อผู้ใช้ไม่ควรเกิน 20 ตัวอักษร')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:18:00.437" endtime="20240717 22:18:00.491"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${FAILED TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:18:00.532" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:18:00.491" endtime="20240717 22:18:00.532"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:18:00.535" endtime="20240717 22:18:02.755"/>
+</kw>
+<status status="PASS" starttime="20240717 22:17:57.818" endtime="20240717 22:18:02.757"/>
+</test>
+<test id="s1-t11" name="CREATE_ACCOUNT_11: User create account with password length 7 characters should failed (&lt;8)" line="82">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:18:02.762" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:18:02.761" endtime="20240717 22:18:04.168"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>ppim</arg>
+<arg>nc</arg>
+<arg>mk</arg>
+<arg>1234567</arg>
+<arg>1234567</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:04.170" level="INFO">Typing text 'ppim' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:04.169" endtime="20240717 22:18:04.354"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:04.355" level="INFO">Typing text 'nc' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:04.354" endtime="20240717 22:18:04.485"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:04.486" level="INFO">Typing text 'mk' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:04.485" endtime="20240717 22:18:04.614"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:04.614" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:18:04.671" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:18:04.763" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:18:04.614" endtime="20240717 22:18:04.763"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:04.764" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:18:04.829" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:18:04.931" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:18:04.763" endtime="20240717 22:18:04.931"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:18:04.932" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:18:05.375" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:18:04.931" endtime="20240717 22:18:05.432"/>
+</kw>
+<status status="PASS" starttime="20240717 22:18:04.168" endtime="20240717 22:18:05.433"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${PASSWORD WARNING}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:18:05.525" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[4]/div[contains(text(), 'รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:18:05.435" endtime="20240717 22:18:05.525"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${FAILED TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:18:05.566" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:18:05.526" endtime="20240717 22:18:05.566"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:18:05.567" endtime="20240717 22:18:07.823"/>
+</kw>
+<status status="PASS" starttime="20240717 22:18:02.760" endtime="20240717 22:18:07.824"/>
+</test>
+<test id="s1-t12" name="CREATE_ACCOUNT_12: User create account with password length 8 characters should success (=8)" line="87">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:18:07.828" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:18:07.827" endtime="20240717 22:18:09.377"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>ppim1</arg>
+<arg>nc</arg>
+<arg>mk</arg>
+<arg>12345678</arg>
+<arg>12345678</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:09.381" level="INFO">Typing text 'ppim1' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:09.379" endtime="20240717 22:18:09.556"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:09.557" level="INFO">Typing text 'nc' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:09.556" endtime="20240717 22:18:09.687"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:09.688" level="INFO">Typing text 'mk' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:09.688" endtime="20240717 22:18:09.838"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:09.839" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:18:09.915" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:18:10.021" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:18:09.838" endtime="20240717 22:18:10.021"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:10.021" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:18:10.098" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:18:10.198" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:18:10.021" endtime="20240717 22:18:10.199"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:18:10.199" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:18:10.544" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:18:10.199" endtime="20240717 22:18:10.583"/>
+</kw>
+<status status="PASS" starttime="20240717 22:18:09.378" endtime="20240717 22:18:10.584"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${SUCCESS TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:18:10.642" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'สร้างบัญชีสำเร็จ')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:18:10.585" endtime="20240717 22:18:10.642"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:18:10.643" endtime="20240717 22:18:12.876"/>
+</kw>
+<status status="PASS" starttime="20240717 22:18:07.826" endtime="20240717 22:18:12.877"/>
+</test>
+<test id="s1-t13" name="CREATE_ACCOUNT_13: User create account with password length 9 characters should success (&gt;8)" line="91">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:18:12.882" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:18:12.881" endtime="20240717 22:18:14.315"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>ppim2</arg>
+<arg>nc</arg>
+<arg>mk</arg>
+<arg>123456789</arg>
+<arg>123456789</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:14.318" level="INFO">Typing text 'ppim2' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:14.317" endtime="20240717 22:18:14.496"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:14.497" level="INFO">Typing text 'nc' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:14.496" endtime="20240717 22:18:14.638"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:14.639" level="INFO">Typing text 'mk' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:14.639" endtime="20240717 22:18:14.769"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:14.770" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:18:14.827" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:18:14.919" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:18:14.769" endtime="20240717 22:18:14.919"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:14.920" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:18:14.977" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:18:15.082" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:18:14.919" endtime="20240717 22:18:15.082"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:18:15.083" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:18:15.419" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:18:15.083" endtime="20240717 22:18:15.456"/>
+</kw>
+<status status="PASS" starttime="20240717 22:18:14.317" endtime="20240717 22:18:15.456"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${SUCCESS TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:18:15.626" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'สร้างบัญชีสำเร็จ')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:18:15.457" endtime="20240717 22:18:15.626"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:18:15.626" endtime="20240717 22:18:17.803"/>
+</kw>
+<status status="PASS" starttime="20240717 22:18:12.880" endtime="20240717 22:18:17.804"/>
+</test>
+<test id="s1-t14" name="CREATE_ACCOUNT_14: User create account with mismatched password and confirm password should failed" line="95">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240717 22:18:17.808" level="INFO">Opening browser 'chrome' to base url 'D:MyPractice\simple-testcase\create-account.html'.</msg>
+<status status="PASS" starttime="20240717 22:18:17.807" endtime="20240717 22:18:19.314"/>
+</kw>
+<kw name="Fill data to form and click button &quot;Create Account&quot;">
+<arg>ppim3</arg>
+<arg>nc</arg>
+<arg>mk</arg>
+<arg>12345678</arg>
+<arg>12345678910</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT USERNAME}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:19.321" level="INFO">Typing text 'ppim3' into text field 'xpath://*[@id="username"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:19.320" endtime="20240717 22:18:19.500"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT FIRSTNAME}</arg>
+<arg>${FIRST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:19.501" level="INFO">Typing text 'nc' into text field 'xpath://*[@id="firstname"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:19.501" endtime="20240717 22:18:19.627"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT LASTNAME}</arg>
+<arg>${LAST NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:19.628" level="INFO">Typing text 'mk' into text field 'xpath://*[@id="lastname"]'.</msg>
+<status status="PASS" starttime="20240717 22:18:19.627" endtime="20240717 22:18:19.768"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:19.769" level="INFO">Typing password into text field 'xpath://*[@id="password"]'.</msg>
+<msg timestamp="20240717 22:18:19.846" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:18:19.941" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:18:19.768" endtime="20240717 22:18:19.941"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${INPUT CONFIRM PASSWORD}</arg>
+<arg>${CONFIRM PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240717 22:18:19.942" level="INFO">Typing password into text field 'xpath://*[@id="confirmPassword"]'.</msg>
+<msg timestamp="20240717 22:18:20.004" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240717 22:18:20.082" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240717 22:18:19.942" endtime="20240717 22:18:20.082"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CREATE ACCOUNT BTN}</arg>
+<arg>Return</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240717 22:18:20.083" level="INFO">Sending key(s) ('Return',) to xpath://*[@id="create-account-form"]/input element.</msg>
+<msg timestamp="20240717 22:18:20.439" level="INFO">Sending keys Return</msg>
+<status status="PASS" starttime="20240717 22:18:20.082" endtime="20240717 22:18:20.477"/>
+</kw>
+<status status="PASS" starttime="20240717 22:18:19.318" endtime="20240717 22:18:20.477"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${PASSWORD MISMATCHED MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:18:20.522" level="INFO">Element 'xpath://*[@id="create-account-form"]/div[5]/div[contains(text(), 'รหัสผ่านไม่ตรงกัน')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:18:20.478" endtime="20240717 22:18:20.522"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${FAILED TOAST MSG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240717 22:18:20.559" level="INFO">Element 'xpath://*[@id="toast"]/div[contains(text(), 'ไม่สามารถสร้างบัญชีได้ กรุณากรอกข้อมูลให้ถูกต้อง')]' is displayed.</msg>
+<status status="PASS" starttime="20240717 22:18:20.523" endtime="20240717 22:18:20.560"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240717 22:18:20.561" endtime="20240717 22:18:22.737"/>
+</kw>
+<status status="PASS" starttime="20240717 22:18:17.806" endtime="20240717 22:18:22.738"/>
+</test>
+<status status="PASS" starttime="20240717 22:17:12.131" endtime="20240717 22:18:22.742"/>
+</suite>
+<statistics>
+<total>
+<stat pass="14" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="14" fail="0" skip="0" id="s1" name="Create-Account">Create-Account</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
