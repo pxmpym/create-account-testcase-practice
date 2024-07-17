@@ -32,4 +32,4 @@ robot -d results tests/create-account.robot
 ![Result](/img/result.png "result")
 
 
-***If my practice is incorrect or inaccurate in any way, I apologize for it here✧ ˖🧺˚ ༘ ꊞ 🧸  ₊˚. ***
+***If my practice is incorrect or inaccurate in any way, I apologize for it here✧ ˖🧺˚ ༘ ꊞ 🧸  ₊˚ .***
