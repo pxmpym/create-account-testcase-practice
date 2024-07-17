@@ -15,7 +15,7 @@ This repository is my practice project where I have designed a sample "Create Ac
 2. Validation Rules:
 - Username:
     - Maximum 20 characters.
-    - If more than 20 characters, the message "ชื่อผู้ใช้ไม่ควรเกิน 20 ตัวอักษร" will be displayed.
+    - If more than 20 characters, the message "ชื่อผู้ใช้ไม่ควรเกิน 20 ตัวอักษร" will be displayed, and the account cannot be created.
 - Password:
     - Minimum 8 characters.
     - If less than 8 characters, the message "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร" will be displayed, and the account cannot be created.
